@@ -74,10 +74,6 @@ set path+=**
 " Revert with ":unmap Q".
 map Q gq
 
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
-" next search --> causing some freezing, have to fix
-" map <C-L> :nohl<CR><C-L>
-
 " Reload .vimrc with space-s
 map <leader>s :source ~/.vimrc<CR>
 
@@ -129,3 +125,24 @@ if !exists(":DiffOrig")
 command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 	  \ | wincmd p | diffthis
 endif
+
+"========vim-plug setup========
+" If vim-plug isn't installed, install it automatically
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
+call plug#begin()
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
+call plug#end()
+
+" Autoinstall missing plugins on startup
+autocmd VimEnter *
+  \  if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall | q
+  \| endif
