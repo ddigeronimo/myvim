@@ -1,5 +1,32 @@
 set nocompatible
 
+"========vim-plug setup========
+" If vim-plug isn't installed, install it automatically
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
+call plug#begin()
+Plug 'tpope/vim-surround'        " Easily add, change, and delete quotes, parens, tags, etc.
+Plug 'airblade/vim-gitgutter'    " Show file changes in the file gutter
+Plug 'tpope/vim-commentary'      " Function to comment/uncomment lines.
+Plug 'easymotion/vim-easymotion' " Multichar jumping.
+Plug 'junegunn/vim-easy-align'   " Align around characters of your choice.
+Plug 'tpope/vim-git'             " Git filetype support.
+Plug 'tpope/vim-fugitive'        " Better Git commands than :!git.
+Plug 'townk/vim-autoclose'       " Automatically close quotes, parens, tags, etc.
+Plug 'wincent/terminus'          " gVim-style features in terminal.
+Plug 'ctrlpvim/ctrlp.vim'        " Fuzzy file finder.
+call plug#end()
+
+" Autoinstall missing plugins on startup
+autocmd VimEnter *
+  \  if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall | q
+  \| endif
+
 filetype indent plugin on
 syntax on
 
@@ -106,6 +133,12 @@ inoremap <C-W> <C-G>u<C-W>
 inoremap jk <Esc> 
 inoremap kj <Esc> 
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
 " Put these in an autocmd group, so that you can revert them with:
 " ":augroup vimStartup | au! | augroup END"
 augroup vimStartup
@@ -128,24 +161,3 @@ if !exists(":DiffOrig")
 command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 	  \ | wincmd p | diffthis
 endif
-
-"========vim-plug setup========
-" If vim-plug isn't installed, install it automatically
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
-endif
-
-call plug#begin()
-Plug 'tpope/vim-surround'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-commentary'
-Plug 'easymotion/vim-easymotion'
-call plug#end()
-
-" Autoinstall missing plugins on startup
-autocmd VimEnter *
-  \  if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall | q
-  \| endif
