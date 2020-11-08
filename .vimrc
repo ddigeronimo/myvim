@@ -17,7 +17,6 @@ Plug 'junegunn/vim-easy-align'   " Align around characters of your choice.
 Plug 'tpope/vim-git'             " Git filetype support.
 Plug 'tpope/vim-fugitive'        " Better Git commands than :!git.
 Plug 'townk/vim-autoclose'       " Automatically close quotes, parens, tags, etc.
-Plug 'wincent/terminus'          " gVim-style features in terminal.
 Plug 'ctrlpvim/ctrlp.vim'        " Fuzzy file finder.
 call plug#end()
 
