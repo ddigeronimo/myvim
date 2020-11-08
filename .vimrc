@@ -83,15 +83,23 @@ let mapleader = " "
 " Revert with ":unmap Q".
 map Q gq
 
-" Reload .vimrc with space-s
+" Reload .vimrc with space-s.
 map <leader>s :source ~/.vimrc<CR>
+
+" Hitting Ctrl-w for split window functions is a hard stretch for me.
+" Remapping it to leader w makes it easier.
+nnoremap <Leader>w <C-w>
+
+" Search sticking around can be annoying, so mapping :noh to a key is useful.
+" However, on the next reload of the file the highlights will return.
+nnoremap <Leader>n :noh<CR>
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 " Revert with ":iunmap <C-U>".
 inoremap <C-U> <C-G>u<C-U>
 
-" Do the same with CTRL-W
+" Do the same with CTRL-W.
 inoremap <C-W> <C-G>u<C-W>
 
 " Map pressing j & k quickly (in any order) exit insert mode
