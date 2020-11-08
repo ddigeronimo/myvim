@@ -115,8 +115,8 @@ augroup vimStartup
     " (happens when dropping a file on gvim) and for a commit message (it's
     " likely a different one than last time).
     autocmd BufReadPost *
-      \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-      \ |   exe "normal! g`\""
+      \ if line("'\"") >= 0 && line("'\"") <= line("$") && &filetype != "gitcommit"
+      \ |   execute ("normal `\"")
       \ | endif
 augroup END
 
