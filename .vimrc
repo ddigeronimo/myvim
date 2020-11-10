@@ -11,13 +11,14 @@ endif
 call plug#begin()
 Plug 'tpope/vim-surround'        " Easily add, change, and delete quotes, parens, tags, etc.
 Plug 'airblade/vim-gitgutter'    " Show file changes in the file gutter
-Plug 'tpope/vim-commentary'      " Function to comment/uncomment lines.
-Plug 'easymotion/vim-easymotion' " Multichar jumping.
-Plug 'junegunn/vim-easy-align'   " Align around characters of your choice.
-Plug 'tpope/vim-git'             " Git filetype support.
-Plug 'tpope/vim-fugitive'        " Better Git commands than :!git.
+Plug 'tpope/vim-commentary'      " Function to comment/uncomment lines
+Plug 'easymotion/vim-easymotion' " Multichar jumping
+Plug 'junegunn/vim-easy-align'   " Align around characters of your choice
+Plug 'tpope/vim-git'             " Git filetype support
+Plug 'tpope/vim-fugitive'        " Better Git commands than :!git
 Plug 'townk/vim-autoclose'       " Automatically close quotes, parens, tags, etc.
-Plug 'ctrlpvim/ctrlp.vim'        " Fuzzy file finder.
+Plug 'junegunn/fzf'              " Vim plugin for FZF (Fuzzy Finder)
+Plug 'bling/vim-bufferline'      " Display a list of current buffers in the cmd bar
 call plug#end()
 
 " Autoinstall missing plugins on startup
