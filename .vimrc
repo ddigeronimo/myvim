@@ -121,6 +121,9 @@ nnoremap <Leader>w <C-w>
 " However, on the next reload of the file the highlights will return.
 nnoremap <Leader>n :noh<CR>
 
+" Mapping FZF for easy access like VSCode's CMD-p.
+nnoremap <leader>f :FZF<CR>
+
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 " Revert with ":iunmap <C-U>".
