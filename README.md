@@ -5,3 +5,6 @@
 
 ## Create Symlink:
 	ln -s ~/.vim/.vimrc ~/.vimrc
+
+## Setup for Ideavim:
+        ln -s ~/.vim/.vimrc ~/.ideavimrc
