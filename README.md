@@ -7,4 +7,4 @@
 	ln -s ~/.vim/.vimrc ~/.vimrc
 
 ## Setup for Ideavim:
-        ln -s ~/.vim/.vimrc ~/.ideavimrc
+    ln -s ~/.vim/.vimrc ~/.ideavimrc
