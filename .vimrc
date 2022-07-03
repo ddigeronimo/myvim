@@ -11,7 +11,7 @@ endif
 call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-commentary' 
+Plug 'tpope/vim-commentary'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-git'
@@ -35,7 +35,7 @@ autocmd VimEnter *
 
 " Basic Setup
 if has('autocmd')
-    filetype plugin indent  on
+    filetype plugin indent on
 endif
 if has('syntax') && !exists('g:syntax_on')
     syntax enable
@@ -53,7 +53,7 @@ colorscheme gruvbox
 
 
 " Airline setup
-let g:ariline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
