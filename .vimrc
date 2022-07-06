@@ -25,6 +25,7 @@ Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'mileszs/ack.vim'
 Plug 'machakann/vim-highlightedyank'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 " Autoinstall missing plugins on startup
@@ -49,7 +50,7 @@ if (has("termguicolors"))
     set termguicolors
 endif
 set background=dark
-colorscheme gruvbox
+colorscheme papercolor
 
 
 " Airline setup
