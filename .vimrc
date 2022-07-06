@@ -160,9 +160,6 @@ let mapleader = " "
 " Revert with ":unmap Q".
 " map Q gq
 
-" Reload current Vimscript file (inc. ~/.vimrc) with space-s.
-map <leader>s :source %<CR>
-
 " Remap Ctrl-w window commands to Leader-w for quicker access
 nnoremap <Leader>w <C-w>
 
