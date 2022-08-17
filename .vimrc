@@ -17,12 +17,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'townk/vim-autoclose'
-Plug 'bling/vim-bufferline'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdtree'
-Plug 'morhetz/gruvbox'
 Plug 'mileszs/ack.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'NLKNguyen/papercolor-theme'
@@ -205,23 +203,23 @@ nnoremap <Leader>v <C-v>
 
 " Change cursor shape depending on mode
 " Sorta hacky and probably needs tuning to work right outside of my work rig
-if &term =~ '^xterm'
-  let &t_EI = "\<Esc>[1 q"
-  let &t_SI = "\<Esc>[5 q"
-  let &t_SR = "\<Esc>[3 q"
-  " &t_EI -> normal mode
-  " &t_SI -> insert mode
-  " &t_SR -> replace mode
-  " 1 or 0 -> blinking block
-  " 2 -> solid block
-  " 3 -> blinking underscore
-  " 4 -> solid underscore
-  " Recent versions of xterm (282 or above) also support
-  " 5 -> blinking vertical bar
-  " 6 -> solid vertical bar
-  " Reset the cursor to a vertical line on exit:
-  autocmd VimLeave * :!echo -ne "\e[5 q"
-endif
+" if &term =~ '^xterm'
+"   let &t_EI = "\<Esc>[1 q"
+"   let &t_SI = "\<Esc>[5 q"
+"   let &t_SR = "\<Esc>[3 q"
+"   " &t_EI -> normal mode
+"   " &t_SI -> insert mode
+"   " &t_SR -> replace mode
+"   " 1 or 0 -> blinking block
+"   " 2 -> solid block
+"   " 3 -> blinking underscore
+"   " 4 -> solid underscore
+"   " Recent versions of xterm (282 or above) also support
+"   " 5 -> blinking vertical bar
+"   " 6 -> solid vertical bar
+"   " Reset the cursor to a vertical line on exit:
+"   autocmd VimLeave * :!echo -ne "\e[5 q"
+" endif
 
 " Put these in an autocmd group, so that you can revert them with:
 " ":augroup vimStartup | au! | augroup END"
